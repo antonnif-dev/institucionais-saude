@@ -1,6 +1,8 @@
 import { Inter, Playfair_Display } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from "next";
+import { ReactNode } from "react";
 import localFont from "next/font/local";
+import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,20 +24,26 @@ const lucidaFaxItalic = localFont({
   variable: "--font-lucida-fax-italic",
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Dra. Laís Namen",
   description: "Clínica especializada",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <html lang="pt-BR">
       <body
-        className={`${inter.variable} ${playfair.variable}
-        ${lucidaBright.variable}
+        className={`
+          ${inter.variable}
+          ${playfair.variable}
+          ${lucidaBright.variable}
           ${lucidaFaxItalic.variable}
           antialiased
-          `}
+        `}
       >
         {children}
       </body>
