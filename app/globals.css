@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+body {
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: var(--font-inter);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-playfair);
+}
+
+.container-premium {
+  @apply max-w-7xl mx-auto px-6;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow:
+    0 8px 32px rgba(15,23,42,0.08);
+}
+
+.mesh-bg {
+  background:
+    radial-gradient(circle at top left,
+      rgba(59,130,246,0.15),
+      transparent 30%),
+    radial-gradient(circle at bottom right,
+      rgba(147,197,253,0.12),
+      transparent 35%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.titulo-nome {
+  font-family: 'LucidaBright', serif;
+  color: black;
+}
+
+.subtitulo-especialidade {
+  font-family: 'LucidaFaxItalic', serif;
+
+  background: linear-gradient(90deg,
+      #FFD54F 0%,
+      #C79200 100%);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
