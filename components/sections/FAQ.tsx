@@ -24,7 +24,7 @@ export default function FAQ() {
 
         <div className="mt-16">
 
-          <Accordion type="single">
+          <Accordion>
 
             <AccordionItem value="1">
               <AccordionTrigger>
