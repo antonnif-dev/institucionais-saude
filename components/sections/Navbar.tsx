@@ -113,7 +113,6 @@ export default function Navbar() {
 
             <div className="flex items-center gap-4">
               <Button
-                asChild
                 className="
                   hidden lg:flex
                   rounded-full
