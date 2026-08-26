@@ -1,79 +1,11 @@
-"use client";
+import { Brain, Heart, Shield, Users } from "lucide-react";
+import WhatsAppButton from "@/components/shared/WhatsAppButton";
 
-import { motion } from "framer-motion";
-import {
-  HeartPulse,
-  Brain,
-  Stethoscope,
-} from "lucide-react";
-
-const specialties = [
-  {
-    icon: HeartPulse,
-    title: "Cardiologia",
-    description:
-      "Diagnósticos precisos e acompanhamento especializado."
-  },
-  {
-    icon: Brain,
-    title: "Neurologia",
-    description:
-      "Tratamentos modernos focados em qualidade de vida."
-  },
-  {
-    icon: Stethoscope,
-    title: "Clínica Geral",
-    description:
-      "Atendimento humanizado e acompanhamento contínuo."
-  },
+const groups = [
+  { icon: Brain, title: "Neurodesenvolvimento", items: ["TDAH", "Transtorno do Espectro Autista (TEA)", "Dificuldades escolares e de aprendizagem"] },
+  { icon: Heart, title: "Saúde emocional", items: ["Ansiedade", "Depressão", "Transtorno Obsessivo-Compulsivo (TOC)", "Transtorno Bipolar", "Transtornos do sono"] },
+  { icon: Users, title: "Vínculos e família", items: ["Dificuldades emocionais e comportamentais", "Questões familiares e de vínculo", "Situações de trauma, luto ou mudanças importantes"] },
 ];
-
 export default function Specialties() {
-  return (
-    <section id="especialidades" className="py-28 bg-pink-100 scroll-mt-6 md:scroll-mt-32">
-      <div className="container-premium">
-
-        <div className="text-center max-w-3xl mx-auto">
-          <span className="text-blue-600 font-medium">
-            Especialidades
-          </span>
-
-          <h2 className="text-5xl mt-4">
-            Atendimento especializado de alto padrão
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 mt-20">
-
-          {specialties.map((item, index) => {
-            const Icon = item.icon;
-
-            return (
-              <motion.div
-                key={index}
-                whileHover={{
-                  y: -10,
-                  scale: 1.02,
-                }}
-                className="glass p-10 rounded-4xl border border-white/40 shadow-xl"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center">
-                  <Icon className="text-blue-600" size={32} />
-                </div>
-
-                <h3 className="text-2xl mt-8">
-                  {item.title}
-                </h3>
-
-                <p className="text-slate-600 mt-4 leading-7">
-                  {item.description}
-                </p>
-              </motion.div>
-            );
-          })}
-
-        </div>
-      </div>
-    </section>
-  );
+  return <section id="cuidados" className="scroll-mt-24 bg-white py-24 lg:py-32"><div className="shell"><div className="mx-auto max-w-3xl text-center"><p className="eyebrow">Como posso ajudar</p><h2 className="section-title mt-4">Cuidado para cada momento da sua família</h2><p className="body-copy mt-6">Cada criança e cada adolescente carrega uma história única. Estas são algumas das jornadas que acompanho com atenção e evidência científica.</p></div><div className="mt-16 grid gap-7 lg:grid-cols-3">{groups.map(({ icon: Icon, title, items }) => <article key={title} className="rounded-[2rem] border border-[#dfcdbb] bg-[#fcfaf7] p-7 shadow-[0_18px_60px_rgba(39,43,66,.06)]"><div className="mb-6 flex items-center gap-3 border-b border-[#dfcdbb] pb-5"><span className="grid h-11 w-11 place-items-center rounded-full bg-[#f3e8dc] text-[#9a6a42]"><Icon size={21} /></span><h3 className="text-2xl text-[#6d2634]">{title}</h3></div><ul className="grid gap-3">{items.map(item => <li key={item} className="rounded-2xl bg-[#272b42] px-5 py-4 text-center font-serif text-lg leading-snug text-[#f2d7b5]">{item}</li>)}</ul></article>)}</div><aside className="mt-7 grid overflow-hidden rounded-[2rem] border border-[#dfcdbb] bg-[#f3e8dc] lg:grid-cols-[.55fr_1.45fr]"><div className="flex flex-col justify-between bg-[#6d2634] p-8 text-white lg:p-10"><Shield className="text-[#e9c394]" size={34} /><div><p className="mt-8 text-sm font-bold uppercase tracking-[.15em] text-[#e9c394]">Atenção especial</p><h3 className="mt-3 text-3xl leading-tight">Cuidado em momentos mais delicados</h3></div></div><div className="p-8 lg:p-10"><p className="font-serif text-xl italic leading-8 text-[#5b4145]">Sei que buscar ajuda nesses momentos exige coragem. Você não está sozinho — existe caminho de cuidado, com respeito ao tempo e à dor de cada família.</p><div className="mt-7 grid gap-3 sm:grid-cols-2"><div className="rounded-2xl border border-[#dfcdbb] bg-white p-5 text-center font-serif text-lg text-[#563640]">Automutilação e sofrimento emocional na adolescência</div><div className="rounded-2xl border border-[#dfcdbb] bg-white p-5 text-center font-serif text-lg text-[#563640]">Uso de substâncias na adolescência</div></div></div></aside><div className="mt-10 text-center"><WhatsAppButton /></div></div></section>;
 }

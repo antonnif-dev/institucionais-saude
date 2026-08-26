@@ -1,4 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Site institucional — Dra. Laís Namen
+
+Site institucional em Next.js para apresentação do atendimento em saúde mental da infância e adolescência.
+
+## Antes de publicar
+
+1. Preencha `crm` e `rqePediatria` em `lib/site.ts`.
+2. Defina `NEXT_PUBLIC_SITE_URL` na hospedagem com a URL final do site.
+3. Confirme com a médica os dados profissionais e a redação final do currículo.
+4. Rode `npm run lint` e `npm run build`.
+
+O número de WhatsApp também fica centralizado em `lib/site.ts`.
 
 ## Getting Started
 

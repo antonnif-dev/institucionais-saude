@@ -1,74 +1,7 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import MeshGradient from "@/components/effects/MeshGradient";
-import NoiseOverlay from "@/components/effects/NoiseOverlay";
-import FloatingCard from "@/components/effects/FloatingCard";
-import FadeUp from "@/components/effects/FadeUp";
 import Image from "next/image";
+import { ArrowDown, HeartHandshake } from "lucide-react";
+import WhatsAppButton from "@/components/shared/WhatsAppButton";
 
 export default function Hero() {
-  const whatsappUrl = `https://wa.me/553131420880?text=${encodeURIComponent("Olá, gostaria de agendar uma sessão.")}`
-  return (
-    <section className="bg-pink-100 relative overflow-hidden pt-5 md:pt-30 md:pb-32">
-
-      <MeshGradient />
-
-      <NoiseOverlay />
-
-      <div className="container-premium flex flex-col-reverse lg:grid lg:grid-cols-2 pt-30 gap-10 items-center">
-
-        <FadeUp>
-          <div>
-            <h1 className="hidden lg:block text-center text-5xl lg:text-7xl leading-tight font-bold">
-              Tratamento médico com cuidado humanizado.
-            </h1>
-
-            <p className="mt-8 text-center text-lg text-slate-600 max-w-xl">
-              Cuidado médico humanizado em saúde mental da infância e adolescência para fortalecer vínculos, acolher emoções e transformar relações familiares.
-            </p>
-
-            <div className="flex justify-center flex-wrap gap-4 mt-5">
-
-              <a href={whatsappUrl}
-                target="_blank"
-                className="border border-black rounded-full px-8 py-4 text-base"
-              >
-                Agendar Consulta
-              </a>
-            </div>
-          </div>
-        </FadeUp>
-
-        <FadeUp>
-          <motion.div
-            whileHover={{
-              scale: 1.01,
-            }}
-            className="relative"
-          >
-
-            <div className="absolute inset-0 bg-blue-400/20 blur-3xl rounded-full" />
-
-            <FloatingCard />
-            <h1 className="block lg:hidden text-center text-5xl lg:text-7xl leading-tight font-bold pb-4">
-              Tratamento médico com cuidado humanizado.
-            </h1>
-            <div className="relative w-full h-[500px] md:h-[550px]">
-              <Image
-                src="/Foto-Home.jpg"
-                alt="Médico"
-                fill
-                priority
-                className="rounded-4xl object-cover"
-              />
-            </div>
-          </motion.div>
-        </FadeUp>
-      </div>
-
-
-    </section >
-  );
+  return <section id="inicio" className="grain relative overflow-hidden bg-[#f3e8dc] pt-28"><div className="absolute -right-32 top-10 h-96 w-96 rounded-full bg-[#d9b891]/25 blur-3xl" /><div className="shell relative grid min-h-[calc(100svh-5rem)] items-center gap-10 py-12 lg:grid-cols-[1.06fr_.94fr] lg:py-16"><div className="relative z-10 max-w-2xl"><p className="eyebrow mb-6">Cuidado médico · Infância · Adolescência</p><h1 className="text-[clamp(3rem,7vw,6.5rem)] leading-[.95] tracking-[-.055em] text-[#272b42]">Seu filho está sofrendo, e você não sabe mais o que fazer?</h1><p className="mt-7 max-w-xl text-lg leading-8 text-[#555766]">Cuidado médico humanizado em saúde mental da infância e adolescência, para acolher emoções, compreender comportamentos e fortalecer os vínculos da família.</p><div className="mt-9 flex flex-wrap gap-3"><WhatsAppButton /><a href="#cuidados" className="inline-flex min-h-12 items-center gap-2 rounded-full px-5 text-sm font-bold text-[#6d2634]">Entenda como posso ajudar <ArrowDown size={17} /></a></div><div className="mt-10 flex max-w-lg items-start gap-3 border-t border-[#6d2634]/15 pt-6 text-sm leading-6 text-[#62616a]"><HeartHandshake className="mt-0.5 shrink-0 text-[#9a6a42]" size={20} /><span>Um espaço de escuta sem julgamentos, com decisões compartilhadas e respeito ao tempo de cada família.</span></div></div><div className="relative mx-auto w-full max-w-[32rem] self-end"><div className="absolute -inset-3 rounded-t-[12rem] border border-[#b98651]/35" /><div className="relative aspect-[4/5] overflow-hidden rounded-t-[11rem] bg-[#d9b891]"><Image src="/Foto-Home.jpg" alt="Dra. Laís Namen sorrindo" fill priority sizes="(max-width: 1024px) 90vw, 42vw" className="object-cover object-[50%_36%]" /></div><div className="absolute bottom-5 left-1/2 w-[85%] -translate-x-1/2 rounded-2xl border border-white/50 bg-white/90 p-4 text-center shadow-xl backdrop-blur"><p className="font-serif text-lg text-[#6d2634]">“Cada história merece ser compreendida por inteiro.”</p></div></div></div></section>;
 }

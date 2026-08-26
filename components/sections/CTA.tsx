@@ -1,28 +1,3 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-
-export default function CTA() {
-  return (
-    <section className="py-28 bg-pink-300 text-white relative overflow-hidden">
-
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/20 blur-3xl rounded-full" />
-
-      <div className="container-premium relative text-center">
-
-        <h2 className="text-5xl leading-tight max-w-4xl mx-auto">
-          Agende sua consulta e receba um atendimento premium.
-        </h2>
-
-        <p className="mt-8 text-black max-w-2xl mx-auto">
-          Atendimento moderno, humanizado e focado em excelência clínica.
-        </p>
-
-        <Button className="mt-10 rounded-full px-10 py-7 text-lg">
-          Agendar pelo WhatsApp
-        </Button>
-
-      </div>
-    </section>
-  );
-}
+import { MessageCircleQuestion } from "lucide-react";
+import WhatsAppButton from "@/components/shared/WhatsAppButton";
+export default function CTA() { return <section className="bg-[#f3e8dc] py-20"><div className="shell"><div className="relative overflow-hidden rounded-[2.5rem] bg-[#6d2634] px-6 py-16 text-center text-white shadow-[0_28px_80px_rgba(109,38,52,.18)] sm:px-12"><div className="absolute -left-20 -top-20 h-64 w-64 rounded-full border-[45px] border-white/5" /><MessageCircleQuestion className="mx-auto text-[#e9c394]" size={38} /><p className="eyebrow mt-5 !text-[#e9c394]">Um primeiro passo possível</p><h2 className="mx-auto mt-4 max-w-3xl text-4xl leading-tight sm:text-5xl">Ainda com dúvidas se é o momento certo?</h2><p className="mx-auto mt-5 max-w-xl text-lg leading-8 text-white/72">Fale comigo antes de agendar. Você pode explicar brevemente o que está acontecendo e tirar suas dúvidas sobre o atendimento.</p><div className="mt-8 flex justify-center"><WhatsAppButton label="Agendar via WhatsApp" /></div></div></div></section>; }
