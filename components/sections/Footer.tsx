@@ -1,3 +1,25 @@
 import Image from "next/image";
 import { site, whatsappUrl } from "@/lib/site";
-export default function Footer() { const professionalId = [site.crm, site.rqePediatria].filter(Boolean).join(" · "); return <footer className="bg-[#202338] py-12 text-white"><div className="shell grid gap-10 md:grid-cols-[1.4fr_.6fr]"><div className="flex items-start gap-4"><Image src="/Logo-Lais-Favicon.png" alt="" width={58} height={58} className="h-14 w-14 rounded-full bg-white object-contain" /><div><h2 className="text-2xl">Dra. Laís Namen</h2><p className="mt-2 max-w-lg text-sm leading-6 text-white/55">Cuidado médico humanizado em saúde mental da infância e adolescência, em Belo Horizonte.</p>{professionalId && <p className="mt-3 text-sm font-bold text-[#e9c394]">{professionalId}</p>}</div></div><div className="md:text-right"><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-[#e9c394] hover:text-white">Agendar via WhatsApp</a><nav className="mt-4 flex gap-4 text-sm text-white/55 md:justify-end" aria-label="Links do rodapé"><a href="#sobre">Sobre</a><a href="#cuidados">Cuidados</a><a href="#duvidas">Dúvidas</a></nav></div></div><div className="shell mt-10 border-t border-white/10 pt-6 text-xs leading-5 text-white/40"><p>As informações deste site têm caráter educativo e não substituem avaliação médica individualizada. Em situações de urgência ou risco imediato, procure um serviço de emergência.</p><p className="mt-3">© {new Date().getFullYear()} Dra. Laís Namen. Todos os direitos reservados.</p></div></footer>; }
+export default function Footer() {
+    const professionalId = [site.crm, site.rqePediatria].filter(Boolean).join(" · "); return <footer className="bg-[#202338] py-12 text-white"><div className="shell grid gap-10 md:grid-cols-[1.4fr_.6fr]"><div className="flex items-start gap-4"><Image src="/Logo-Lais-Favicon.png" alt="" width={58} height={58} className="h-14 w-14 rounded-full bg-white object-contain" /><div><h2 className="text-2xl">Dra. Laís Namen</h2><p className="mt-2 max-w-lg text-sm leading-6 text-white/55">Cuidado médico humanizado em saúde mental da infância e adolescência, em Belo Horizonte.</p>{professionalId && <p className="mt-3 text-sm font-bold text-[#e9c394]">{professionalId}</p>}</div></div><div className="md:text-right"><a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="font-bold text-[#e9c394] hover:text-white">Agendar via WhatsApp</a>
+
+        <nav className="mt-4 flex gap-4 text-sm text-white/55 md:justify-end" aria-label="Links do rodapé"><a href="#sobre">Sobre</a><a href="#cuidados">Cuidados</a><a href="#duvidas">Dúvidas</a>
+        </nav>
+
+    </div>
+
+    </div>
+        <div className="shell mt-10 text-center border-t border-white/10 pt-6 text-xs leading-5 text-white/40">
+            <p>
+                As informações deste site têm caráter educativo e não substituem avaliação médica individualizada. Em situações de urgência ou risco imediato, procure um serviço de emergência.
+
+            </p>
+            <p className="mt-3 text-center">
+                © {new Date().getFullYear()} Dra. Laís Namen. Todos os direitos reservados.
+            </p>
+            <p className="mt-3 text-center">
+                Desenvolvido por sossoftwares.com.br
+            </p>
+        </div>
+    </footer>;
+}

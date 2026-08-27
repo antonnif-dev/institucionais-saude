@@ -48,8 +48,7 @@ export default function About() {
 
           <h2
             id="titulo-sobre"
-            className="section-title mt-4"
-          >
+            className="text-5xl md:text-7xl leading-[.95] tracking-[-.055em] text-[#272b42]">
             Formação sólida, no lugar certo, para cuidar de quem você
             mais ama.
           </h2>
